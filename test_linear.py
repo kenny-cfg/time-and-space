@@ -1,3 +1,4 @@
+import time
 import unittest
 
 from linear import sum_of_integers
@@ -6,7 +7,10 @@ from linear import sum_of_integers
 class TestLinear(unittest.TestCase):
     def test_for_1000000_numbers(self):
         source = list(range(0, 1000000))
+        start = time.process_time()
         sum_of_integers(source)
+        end = time.process_time()
+        print(end - start)
 
     def test_for_2000000_numbers(self):
         source = list(range(0, 2000000))
